@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+/*   Primary */
+  --red: hsl(0, 100%, 74%) ;
+  --green: hsl(154, 59%, 51%);
+
+/*   Accent */
+  --blue: hsl(248, 32%, 49%);
+
+/*   Neutral */
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: hsl(246, 25%, 77%);
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--red);
+  background-image: url(./images/bg-intro-desktop.png);
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+  'description registration';
+  align-items: center;
+  margin: 0 10rem;
+  max-width: 1200px;
+}
+
+.description {
+  grid-area: description;
+  color: white;
+  margin-right: 2rem;
+}
+
+.description h1 { font-size: 42px;}
+
+.description p {
+  font-size: 80%;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  padding-top: 1.3rem;
+}
+
+.registration {
+  grid-area: registration;
+  text-align: center;
+}
+
+#note {
+  background-color: var(--blue);
+  color: white;
+  font-size: 75%;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 6px 0px 0px rgba(0, 0, 0, 0.16);
+  margin-bottom: 2rem;
+}
+
+form {
+  background-color: white;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 0px 0px rgba(0, 0, 0, 0.16);
+}
+
+input[type=text],
+input[type=email],
+input[type=button],
+input[type=password]{
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type=button] {
+  background-color: var(--green);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0px 3px 0px 0px rgba(56, 204, 240, 0.39);
+}
+
+small {
+  font-size: 60%;
+  color: var(--grayish-blue);
+}
+
+small strong {
+  color: var(--red);
+}
+
+@media (max-width:1024px) {
+  main {
+    margin: 0 3rem;
+  }
+  .description h1 { font-size: 36px;}
+}
+
+@media (max-width:800px) {
+  main {
+    grid-template-areas:
+    'description'
+    'registration';
+    background-image: url(./images/bg-intro-mobile.png);
+    text-align: center;
+    margin: 0 1.5rem;
+  }
+
+  .description {
+    padding-top: 6rem;
+    margin: unset;
+  }
+  .description h1 { font-size: 28px; }
+  .description p { padding-bottom: 3rem; }
+
+  form {margin-bottom: 3rem;}
+}
