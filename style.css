@@ -88,6 +88,7 @@ input[type=button] {
   letter-spacing: 0.5px;
   box-shadow: 0px 3px 0px 0px rgba(56, 204, 240, 0.39);
   border: none;
+  cursor: pointer;
 }
 
 input[type=button]:hover {
