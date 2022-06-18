@@ -121,6 +121,13 @@ input:invalid~.error::after {
   float: right;
 }
 
+@media (max-width:1024px) {
+  main {
+    margin: 0 3rem;
+  }
+  .description h1 { font-size: 36px;}
+}
+
 @media (max-width:600px) {
   body{
     background-image: url(./images/bg-intro-mobile.png);
@@ -145,9 +152,3 @@ input:invalid~.error::after {
 
 }
 
-@media (max-width:1024px) {
-  main {
-    margin: 0 3rem;
-  }
-  .description h1 { font-size: 36px;}
-}
