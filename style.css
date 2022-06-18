@@ -8,6 +8,7 @@
 /*   Primary */
   --red: hsl(0, 100%, 74%) ;
   --green: hsl(154, 59%, 51%);
+  --hover: hsl(154, 86%, 69%);
 
 /*   Accent */
   --blue: hsl(248, 32%, 49%);
@@ -18,8 +19,7 @@
 }
 body{
   font-family: 'Poppins', sans-serif;
-  background-color: var(--red);
-  background-image: url(./images/bg-intro-desktop.png);
+  background: center url(./images/bg-intro-desktop.png) no-repeat var(--red);
 }
 
 main {
@@ -75,9 +75,10 @@ input[type=button],
 input[type=password]{
   width: 100%;
   padding: 1rem;
-  margin-bottom: 14px;
+  /* margin-bottom: 14px; */
   border-radius: 5px;
   border: 1px solid #ccc;
+  margin-top: 1rem;
 }
 
 input[type=button] {
@@ -86,6 +87,11 @@ input[type=button] {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   box-shadow: 0px 3px 0px 0px rgba(56, 204, 240, 0.39);
+  border: none;
+}
+
+input[type=button]:hover {
+  background-color: var(--hover);
 }
 
 small {
@@ -97,29 +103,64 @@ small strong {
   color: var(--red);
 }
 
-@media (max-width:1024px) {
-  main {
-    margin: 0 3rem;
-  }
-  .description h1 { font-size: 36px;}
+input:required:invalid {
+  outline: none;
+  border: 1px solid var(--red);
+  background-image: url(./images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-origin: content-box;
 }
 
-@media (max-width:800px) {
+input:invalid {
+  outline: none;
+  border: none;
+  border: 1px solid hsl(154, 59% 31%);
+}
+
+input:invalid~.error::after {
+  content: attr(data-error);
+  font-style: italic;
+  padding-top: 0.4rem;
+  font-size: 85%;
+  color: var(--red);
+  float: right;
+}
+
+span {
+  display: none;
+}                         
+
+@media (max-width:600px) {
+  body{
+    background-image: url(./images/bg-intro-mobile.png);
+  }
+
   main {
     grid-template-areas:
     'description'
     'registration';
-    background-image: url(./images/bg-intro-mobile.png);
     text-align: center;
     margin: 0 1.5rem;
   }
-
+  
   .description {
     padding-top: 6rem;
     margin: unset;
   }
   .description h1 { font-size: 28px; }
   .description p { padding-bottom: 3rem; }
-
+  
   form {margin-bottom: 3rem;}
+
+  input:invalid~.error::after {
+    font-size: 65%;
+  }
+}
+
+@media (max-width:1024px) {
+  main {
+    margin: 0 3rem;
+  }
+  .description h1 { font-size: 36px;}
 }

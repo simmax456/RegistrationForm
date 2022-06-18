@@ -26,9 +26,13 @@
 
       <form action="/">
         <input type="text" id="fname" name="fname" placeholder="First Name" required>
+        <div class="error" data-error="First Name cannot be empty"></div>
         <input type="text" id="lname" name="lname" placeholder="Last Name" required>
-        <input type="email" id="email" name="email" placeholder="Email Address">
+        <div class="error" data-error="Last Name cannot be empty"></div>
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+        <div class="error" data-error="Looks like this is not an email"></div>
         <input type="password" id="pwd" name="pwd" placeholder="Password" required>
+        <div class="error" data-error="Password cannot be empty"></div>
         <input type="button" value="Claim your free trial">
         <small>By clicking the button, you are agreeing to our <strong>Terms and Services</strong></small>
       </form>
