@@ -104,7 +104,6 @@ small strong {
 }
 
 input:required:invalid {
-  outline: none;
   border: 1px solid var(--red);
   background-image: url(./images/icon-error.svg);
   background-repeat: no-repeat;
@@ -112,24 +111,14 @@ input:required:invalid {
   background-origin: content-box;
 }
 
-input:invalid {
-  outline: none;
-  border: none;
-  border: 1px solid hsl(154, 59% 31%);
-}
-
 input:invalid~.error::after {
   content: attr(data-error);
   font-style: italic;
   padding-top: 0.4rem;
-  font-size: 85%;
+  font-size: 70%;
   color: var(--red);
   float: right;
 }
-
-span {
-  display: none;
-}                         
 
 @media (max-width:600px) {
   body{
@@ -153,9 +142,6 @@ span {
   
   form {margin-bottom: 3rem;}
 
-  input:invalid~.error::after {
-    font-size: 65%;
-  }
 }
 
 @media (max-width:1024px) {
